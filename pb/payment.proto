@@ -6,7 +6,7 @@ package pb;
 
 message PaymentRequest {
     string transaction_id = 1;
-    string payer_vpa = 2;
-    string payee_vpa = 3;
-    double amount = 4;
+    string payer_account_id = 2;
+    string payee_account_id = 3;
+    int64 amount = 4;
 }

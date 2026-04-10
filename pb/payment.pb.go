@@ -22,13 +22,13 @@ const (
 )
 
 type PaymentRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TransactionId string                 `protobuf:"bytes,1,opt,name=transaction_id,json=transactionId,proto3" json:"transaction_id,omitempty"`
-	PayerVpa      string                 `protobuf:"bytes,2,opt,name=payer_vpa,json=payerVpa,proto3" json:"payer_vpa,omitempty"`
-	PayeeVpa      string                 `protobuf:"bytes,3,opt,name=payee_vpa,json=payeeVpa,proto3" json:"payee_vpa,omitempty"`
-	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	TransactionId  string                 `protobuf:"bytes,1,opt,name=transaction_id,json=transactionId,proto3" json:"transaction_id,omitempty"`
+	PayerAccountId string                 `protobuf:"bytes,2,opt,name=payer_account_id,json=payerAccountId,proto3" json:"payer_account_id,omitempty"`
+	PayeeAccountId string                 `protobuf:"bytes,3,opt,name=payee_account_id,json=payeeAccountId,proto3" json:"payee_account_id,omitempty"`
+	Amount         int64                  `protobuf:"varint,4,opt,name=amount,proto3" json:"amount,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *PaymentRequest) Reset() {
@@ -68,21 +68,21 @@ func (x *PaymentRequest) GetTransactionId() string {
 	return ""
 }
 
-func (x *PaymentRequest) GetPayerVpa() string {
+func (x *PaymentRequest) GetPayerAccountId() string {
 	if x != nil {
-		return x.PayerVpa
+		return x.PayerAccountId
 	}
 	return ""
 }
 
-func (x *PaymentRequest) GetPayeeVpa() string {
+func (x *PaymentRequest) GetPayeeAccountId() string {
 	if x != nil {
-		return x.PayeeVpa
+		return x.PayeeAccountId
 	}
 	return ""
 }
 
-func (x *PaymentRequest) GetAmount() float64 {
+func (x *PaymentRequest) GetAmount() int64 {
 	if x != nil {
 		return x.Amount
 	}
@@ -93,12 +93,12 @@ var File_pb_payment_proto protoreflect.FileDescriptor
 
 const file_pb_payment_proto_rawDesc = "" +
 	"\n" +
-	"\x10pb/payment.proto\x12\x02pb\"\x89\x01\n" +
+	"\x10pb/payment.proto\x12\x02pb\"\xa3\x01\n" +
 	"\x0ePaymentRequest\x12%\n" +
-	"\x0etransaction_id\x18\x01 \x01(\tR\rtransactionId\x12\x1b\n" +
-	"\tpayer_vpa\x18\x02 \x01(\tR\bpayerVpa\x12\x1b\n" +
-	"\tpayee_vpa\x18\x03 \x01(\tR\bpayeeVpa\x12\x16\n" +
-	"\x06amount\x18\x04 \x01(\x01R\x06amountB,Z*github.com/swastiijain24/npci-contracts/pbb\x06proto3"
+	"\x0etransaction_id\x18\x01 \x01(\tR\rtransactionId\x12(\n" +
+	"\x10payer_account_id\x18\x02 \x01(\tR\x0epayerAccountId\x12(\n" +
+	"\x10payee_account_id\x18\x03 \x01(\tR\x0epayeeAccountId\x12\x16\n" +
+	"\x06amount\x18\x04 \x01(\x03R\x06amountB,Z*github.com/swastiijain24/npci-contracts/pbb\x06proto3"
 
 var (
 	file_pb_payment_proto_rawDescOnce sync.Once
