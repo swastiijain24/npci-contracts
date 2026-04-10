@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "github.com/swastiijain24/npci-contracts/pb"; 
+
+package pb;
+
+message PaymentRequest {
+    string transaction_id = 1;
+    string payer_vpa = 2;
+    string payee_vpa = 3;
+    double amount = 4;
+}
