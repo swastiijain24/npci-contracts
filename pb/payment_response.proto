@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "github.com/swastiijain24/contracts/pb";
+
+package pb;
+
+message PaymentResponse {
+    string transaction_id = 1;
+    string status = 2;          
+    string bank_reference_id = 3; 
+    string completed_at = 5;      
+}
