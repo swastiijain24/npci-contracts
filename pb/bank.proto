@@ -17,3 +17,11 @@ message BankRequest {
     string payee_account_id = 4;    
     int64 amount = 5;               
 }
+
+message BankResponse {
+    string transaction_id = 1;      
+    string bank_reference_id = 2;   
+    bool success = 3;               
+    string error_message = 4;       
+    TransactionType type = 5; 
+}
