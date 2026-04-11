@@ -4,15 +4,9 @@ option go_package = "github.com/swastiijain24/contracts/pb";
 
 package pb;
 
-enum TransactionType {
-    TXN_TYPE_UNKNOWN = 0;
-    TXN_TYPE_DEBIT = 1;  
-    TXN_TYPE_CREDIT = 2; 
-}
-
 message BankRequest {
     string transaction_id = 1;
-    TransactionType type = 2;       
+    string type = 2;       
     string payer_account_id = 3;   
     string payee_account_id = 4;    
     int64 amount = 5;               
@@ -23,5 +17,5 @@ message BankResponse {
     string bank_reference_id = 2;   
     bool success = 3;               
     string error_message = 4;       
-    TransactionType type = 5; 
+    string type = 5; 
 }
