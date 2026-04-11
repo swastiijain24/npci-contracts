@@ -13,9 +13,7 @@ enum TransactionType {
 message BankRequest {
     string transaction_id = 1;
     TransactionType type = 2;       
-    
     string payer_account_id = 3;   
     string payee_account_id = 4;    
-    
     int64 amount = 5;               
 }
