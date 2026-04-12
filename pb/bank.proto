@@ -6,11 +6,12 @@ package pb;
 
 message BankRequest {
     string transaction_id = 1;
-    string type = 2;       
-    string payer_account_id = 3;   
-    string payee_account_id = 4;    
-    int64 amount = 5;               
-}
+    string payer_account_id = 2;   
+    string payee_account_id = 3;    
+    int64 amount = 4;
+    string type = 5;
+    string bank_code = 6;           
+} 
 
 message BankResponse {
     string transaction_id = 1;      

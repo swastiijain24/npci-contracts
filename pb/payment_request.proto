@@ -9,4 +9,6 @@ message PaymentRequest {
     string payer_account_id = 2;
     string payee_account_id = 3;
     int64 amount = 4;
+    string payer_bank_code = 5;
+    string payee_bank_code = 6;
 }

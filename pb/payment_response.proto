@@ -7,6 +7,8 @@ package pb;
 message PaymentResponse {
     string transaction_id = 1;
     string status = 2;          
-    string bank_reference_id = 3; 
-    string completed_at = 5;      
+    string debit_bank_ref = 3; 
+    string credit_bank_ref = 5;      
+    string failure_reason = 5;
+    string completed_at = 6;
 }
