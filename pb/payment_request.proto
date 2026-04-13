@@ -11,4 +11,5 @@ message PaymentRequest {
     int64 amount = 4;
     string payer_bank_code = 5;
     string payee_bank_code = 6;
+    string mpin = 7;
 }
